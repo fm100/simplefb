@@ -20,7 +20,7 @@ class TestGraph(unittest.TestCase):
         url = 'https://graph.facebook.com/me?%s' % url_params
         data = b'{"id": "1234", "name": "Freddie"}'
         mock_urlopen.return_value = io.BytesIO(data)
-        result = simplefb.me('test-token')
+        result = simplefb.me('test-token', ver='v2.4')
         self.assertEqual('1234', result['id'])
         self.assertEqual('Freddie', result['name'])
         mock_request.assert_called_once_with(url=url, data=None, method='GET')
@@ -35,7 +35,9 @@ class TestGraph(unittest.TestCase):
         url = 'https://graph.facebook.com/me?%s' % url_params
         data = b'{"id": "1234", "name": "Freddie", "gender": "male"}'
         mock_urlopen.return_value = io.BytesIO(data)
-        result = simplefb.me('test-token', fields=['id', 'name', 'gender'])
+        result = simplefb.me('test-token',
+                             fields=['id', 'name', 'gender'],
+                             ver='v2.4')
         self.assertEqual('1234', result['id'])
         self.assertEqual('Freddie', result['name'])
         self.assertEqual('male', result['gender'])
@@ -56,7 +58,8 @@ class TestGraph(unittest.TestCase):
         result = simplefb.fb_exchange_token(
             app_id='app-id',
             app_secret='app-secret',
-            short_lived_token='test-token'
+            short_lived_token='test-token',
+            ver='v2.4'
         )
         self.assertEqual('long-token', result['access_token'][0])
         self.assertEqual('10000', result['expires'][0])
