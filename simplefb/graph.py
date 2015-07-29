@@ -30,5 +30,10 @@ def fb_exchange_token(app_id, app_secret, short_lived_token):
     return urllib.parse.parse_qs(_api(endpoint, 'GET', params))
 
 
-def me(access_token):
-    return api('/me', 'GET', {'access_token': access_token})
+def me(access_token, fields=('id', 'name')):
+    return api(
+        '/me', 'GET', {
+            'access_token': access_token,
+            'fields': ','.join(fields)
+        }
+    )
