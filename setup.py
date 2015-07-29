@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='simplefb',
-    version='0.1.0a1',
+    version='0.1.0',
     description='A simple facebook graph api',
     url='https://github.com/fm100/simplefb',
     author='Freddie Park',
@@ -18,7 +18,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Stable',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
