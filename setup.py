@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-
 from setuptools import setup, find_packages
 
 setup(
     name='simplefb',
-    version='0.1.0a1',
-    description='A simple facebook graph api',
+    version='0.2.0a1',
+    description='A simple facebook graph api and auth Mixins',
     url='https://github.com/fm100/simplefb',
     author='Freddie Park',
     author_email='sorelove@gmail.com',
@@ -29,13 +27,11 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
 
-    keywords='facebook graph api',
+    keywords='facebook graph api auth',
 
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
 )
